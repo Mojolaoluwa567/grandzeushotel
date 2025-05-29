@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Zeus Hotel Locations</title>
+
+    <!-- MapLibre GL CSS -->
+    <link
+      href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      #map {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      /* Back button styling */
+      .back-btn {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+
+      .back-btn:hover {
+        background-color: #ea7b14;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Back to Home Button -->
+    <button class="back-btn" onclick="window.location.href='index.html'">
+      ⬅ Back to Home
+    </button>
+
+    <!-- MapLibre GL JS -->
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+
+    <script>
+      // Initialize the Map
+      var map = new maplibregl.Map({
+        container: "map",
+        style:
+          "https://api.maptiler.com/maps/streets/style.json?key=1wHSggEneEez2ssDCYxS", // Dark theme map
+        center: [8.6753, 9.082], // Nigeria Center
+        zoom: 6,
+      });
+
+      // Add Navigation Controls (Zoom In/Out)
+      map.addControl(new maplibregl.NavigationControl());
+
+      // Hotel Locations
+      var locations = [
+        { name: "Grand Zeus Hotel Lagos", lat: 6.5244, lng: 3.3792 },
+        { name: "Grand Zeus Hotel Abuja", lat: 9.0579, lng: 7.4951 },
+        { name: "Grand Zeus Hotel Port Harcourt", lat: 4.8156, lng: 7.0498 },
+        { name: "Grand Zeus Hotel Ibadan", lat: 7.3775, lng: 3.947 },
+        { name: "Grand Zeus Hotel Enugu", lat: 6.5244, lng: 7.5086 },
+        { name: "Grand Zeus Hotel Kano", lat: 12.0022, lng: 8.591 },
+        { name: "Grand Zeus Hotel Kaduna", lat: 10.5231, lng: 7.4403 },
+        { name: "Grand Zeus Hotel Benin City", lat: 6.3402, lng: 5.6174 },
+        { name: "Grand Zeus Hotel Owerri", lat: 5.485, lng: 7.0355 },
+        { name: "Grand Zeus Hotel Jos", lat: 9.8965, lng: 8.8583 },
+        { name: "Grand Zeus Hotel Ilorin", lat: 8.4799, lng: 4.5418 },
+        { name: "Grand Zeus Hotel Uyo", lat: 5.0327, lng: 7.9092 },
+        { name: "Grand Zeus Hotel Warri", lat: 5.5174, lng: 5.7519 },
+        { name: "Grand Zeus Hotel Bauchi", lat: 10.3163, lng: 9.843 },
+        { name: "Grand Zeus Hotel Gombe", lat: 10.2897, lng: 11.1717 },
+        { name: "Grand Zeus Hotel Calabar", lat: 4.9828, lng: 8.3346 },
+        { name: "Grand Zeus Hotel Makurdi", lat: 7.7322, lng: 8.5366 },
+        { name: "Grand Zeus Hotel Ado-Ekiti", lat: 7.6211, lng: 5.2213 },
+        { name: "Grand Zeus Hotel Akure", lat: 7.2508, lng: 5.2103 },
+        { name: "Grand Zeus Hotel Minna", lat: 9.6152, lng: 6.5463 },
+        { name: "Grand Zeus Hotel Yola", lat: 9.2035, lng: 12.4954 },
+        { name: "Grand Zeus Hotel Abakaliki", lat: 6.3249, lng: 8.1137 },
+      ];
+
+      // Add Markers
+      locations.forEach(function (location) {
+        new maplibregl.Marker()
+          .setLngLat([location.lng, location.lat])
+          .setPopup(new maplibregl.Popup().setHTML(`<b>${location.name}</b>`)) // Popup with hotel name
+          .addTo(map);
+      });
+    </script>
+  </body>
+</html>

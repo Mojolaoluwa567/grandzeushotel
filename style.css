@@ -1,0 +1,450 @@
+/* General Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Balkind";
+  font-family: "Balkind";
+  overflow-y: hidden;
+  text-decoration: none;
+  list-style: none;
+  background: fixedx;
+}
+.body {
+  font-family: "Balkind";
+  overflow: hidden;
+}
+
+.background {
+  background-image: url("image/homepage-3.jpg");
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(90%);
+  background-size: cover;
+}
+/* Styling for the navbar list */
+.navbar {
+  display: flex; /* Aligns navbar items horizontally */
+  list-style: none; /* Removes default bullet points from list items */
+  padding: 10px 20px; /* Adds padding inside the navbar */
+  position: relative; /* Allows absolute positioning of child elements */
+}
+
+/* Styling for links inside the navbar */
+.navbar li a {
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Sets the text color to white */
+  position: relative; /* Ensures the pseudo-element can be positioned relative to the link */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Pseudo-element for the underline effect */
+.navbar li a::after {
+  content: ""; /* Creates the pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Position it from the middle */
+  width: 0; /* Initially no width */
+  height: 2px; /* Border height */
+  background-color: rgb(210, 110, 3); /* Color of the border */
+  transition: width 0.3s ease; /* Smooth transition for the border width */
+  transform: translateX(-50%); /* Center the border */
+}
+
+/* On hover, the pseudo-element extends the border */
+.navbar li a:hover::after {
+  width: 100%; /* On hover, the border extends to full width */
+}
+
+/* Change text color on hover */
+.navbar li a:hover {
+  color: rgb(210, 110, 3); /* Change text color on hover */
+  cursor: pointer;
+}
+
+/* Styling for the menu icon */
+#icon img {
+  height: 10px;
+  margin-top: 19px; /* Sets the height of the image */
+}
+
+/* Individual positioning of navbar elements */
+#menu {
+  position: absolute; /* Absolutely positions the Menu link */
+  left: 42px; /* Positions it 10px from the left edge of the navbar */
+  font-weight: 600;
+  top: 15px;
+  border: none;
+  outline: none;
+}
+
+.btn a {
+  color: white;
+}
+
+.bar {
+  list-style: none;
+}
+.bar li a {
+  font-size: 120px;
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Sets the text color to white */
+  position: relative; /* Ensures the pseudo-element can be positioned relative to the link */
+  font-weight: bold;
+}
+
+/* Pseudo-element for the underline effect */
+.bar li a::after {
+  content: ""; /* Creates the pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Position it from the middle */
+  width: 0; /* Initially no width */
+  height: 2px; /* Border height */
+  background-color: rgb(255, 255, 255); /* Color of the border */
+  transition: width 0.3s ease; /* Smooth transition for the border width */
+  transform: translateX(-50%); /* Center the border */
+}
+
+/* On hover, the pseudo-element extends the border */
+.bar li a:hover::after {
+  width: 100%; /* On hover, the border extends to full width */
+}
+
+.bar li a:hover {
+  color: white;
+}
+
+#name {
+  position: absolute; /* Absolutely positions the "Zeus Hotel" link */
+  left: 50%; /* Positions it at the center horizontally */
+  transform: translateX(
+    -50%
+  ); /* Centers it exactly by shifting it half its width */
+  font-size: 20px; /* Increases font size */
+  font-weight: bold; /* Makes the text bold */
+  font-weight: 600;
+}
+
+#location {
+  position: absolute; /* Absolutely positions the "Our Locations" link */
+  right: 120px; /* Positions it 120px from the right edge */
+  font-weight: 600;
+}
+
+#book {
+  position: absolute; /* Absolutely positions the "Book Now" link */
+  right: 40px; /* Positions it 10px from the right edge */
+  font-weight: 600;
+}
+
+.text h1 {
+  font-family: "Balkind";
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-top: 300px;
+  font-size: 150px;
+}
+
+.text p {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  max-width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+section {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  box-sizing: border-box; /* Ensures padding and border are included in dimensions */
+}
+
+.opt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 40px; /* Consistent padding all around */
+}
+
+.opt li {
+  list-style: none; /* Removes default bullets from list items */
+  margin: 0 10px; /* Adds space between list items */
+}
+
+.opt li a {
+  position: relative; /* Change from `fixed` to `relative` for proper positioning within the layout */
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: "Balkind", sans-serif; /* Added a fallback font */
+  text-align: center;
+  display: inline-block; /* Ensures proper hover behavior */
+  transition: color 0.3s ease; /* Smooth hover effect for text color */
+  font-size: 16px;
+  font-weight: 800;
+  font-weight: bold;
+}
+
+.opt li a::after {
+  content: ""; /* Creates the pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Position it from the middle */
+  width: 0%; /* Initially no border */
+  height: 2px;
+  background-color: rgb(210, 110, 3); /* Color of the border */
+  transition: width 0.3s ease; /* Smooth transition for the border width */
+  transform: translateX(-50%); /* Center the border */
+}
+
+.opt li a:hover::after {
+  width: 100%; /* On hover, the border extends to full width */
+}
+
+/* For the food and drinks & Our Rooms page & amenties */
+
+.top {
+  position: relative;
+  top: 30px;
+}
+.section-title {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+.back {
+  font-size: 18px;
+  position: fixed; /* Use fixed position for consistent layout on scroll */
+  left: 30%;
+  z-index: 10; /* Ensure it's on top of other elements */
+}
+
+.back li {
+  list-style: none;
+  margin: 5px 0; /* Space between items */
+}
+
+.back li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  position: relative;
+}
+
+.back li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* On hover, the pseudo-element extends the border */
+.back li a:hover::after {
+  width: 100%;
+}
+
+/* Ensure the link itself is clickable */
+.back li a:hover {
+  cursor: pointer;
+}
+
+.brand {
+  text-align: left;
+}
+
+.sign {
+  font-size: 200px;
+  position: absolute;
+  bottom: 350px;
+  max-width: 100%;
+  line-height: 160px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sign p {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  overflow-x: visible;
+}
+
+.food {
+  background-color: rgb(210, 110, 3);
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  z-index: -1;
+  overflow-y: hidden;
+}
+
+.slider {
+  /* display: flex;
+  overflow: hidden; */
+  transition: transform 0.2s ease-out;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.slider-container {
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: transform 0.2s ease-in-out;
+  width: max-content;
+  row-gap: 95px;
+  gap: 100px;
+}
+
+.slide img {
+  object-fit: cover;
+  height: 700px;
+  transition: 0.2s ease-in-out;
+}
+
+.message {
+  margin-top: 10px; /* Ensures the message is directly below */
+  font-size: 36px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: rgb(255, 255, 255);
+}
+
+/* Optional: Zoom on hover */
+.slide:hover {
+  transform: scale(0.75);
+}
+/* Optional: Zoom on hover */
+.slide {
+  position: relative; /* Ensure message is positioned relative to the slide */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7); /* Default size */
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+}
+
+/* Zoom-in effect and message on hover */
+.slide:hover {
+  transform: scale(0.75); /* Zoom in */
+}
+
+/* Show message when hovered */
+.slide:hover .message {
+  opacity: 1;
+}
+
+.slide:hover .sign {
+  opacity: 1;
+}
+.slide:hover img {
+  filter: brightness(50%);
+}
+
+.slide:hover::before img {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  transition: 0.3s ease;
+}
+
+.order {
+  width: 700px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.781);
+  color: white;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-top: -20px;
+}
+
+.order a {
+  font-weight: 600;
+  font-weight: bold;
+  font: 20px;
+}
+
+.slide:hover .order {
+  opacity: 1;
+}
+
+.order:hover {
+  background-color: black;
+}
+
+/* Amenities page */
+.signed {
+  font-size: 200px;
+  position: absolute;
+  bottom: 150px;
+  max-width: 100%;
+  line-height: 160px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.signed p {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  overflow-x: visible;
+}
+
+.slide:hover .signed {
+  opacity: 1;
+}
+
+#post {
+  position: absolute;
+  bottom: 230px;
+}
+
+/* loction back styling */
